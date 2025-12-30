@@ -42,10 +42,7 @@ fn next_pointer(pointer: Int, rotation: Rotation) -> Int {
 fn dial(state: DialState, rotation: Rotation, scorer: Scorer) -> DialState {
   let score = scorer(state.pointer, rotation)
 
-  let next_state =
-    DialState(next_pointer(state.pointer, rotation), state.clicks + score)
-  echo next_state
-  next_state
+  DialState(next_pointer(state.pointer, rotation), state.clicks + score)
 }
 
 // --- Part 1 ---
